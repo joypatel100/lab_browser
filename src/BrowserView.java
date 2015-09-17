@@ -94,13 +94,13 @@ public class BrowserView {
 	 * @throws BrowserException 
 	 */
 	public void showPage (String url) throws BrowserException {
-		URL valid = myModel.go(url);
-		if (url != null) {
+		try{
+			URL valid = myModel.go(url);
 			update(valid);
 		}
-		else {
-			throw new BrowserException(String.format(this.myResources.getString("NotLoad"),url));
-			//showError(String.format(this.myResources.getString("NotLoad"),url));
+		catch(Exception e) {
+			//throw new BrowserException(String.format(this.myResources.getString("NotLoad"),url));
+			showError(String.format(this.myResources.getString("NotLoad"),url));
 		}
 	}
 

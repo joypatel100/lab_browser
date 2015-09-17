@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -65,9 +66,16 @@ public class BrowserModel {
 	/**
 	 * Changes current page to given URL, removing next history.
 	 * @throws BrowserException 
+	 * @throws  
 	 */
 	public URL go (String url) throws BrowserException {
 		myCurrentURL = completeURL(url);
+		try {
+			myCurrentURL.openStream();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			throw new BrowserException(String.format(myResources.getString("MalformedURL"),""));
+		}
 		if (myCurrentURL != null) {
 			if (hasNext()) {
 				myHistory = myHistory.subList(0, myCurrentIndex + 1);
