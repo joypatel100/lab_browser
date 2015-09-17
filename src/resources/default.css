@@ -7,8 +7,8 @@
 
 .button {
     -fx-text-fill: #006464;
-    -fx-background-color: #DFB951;
-    -fx-border-radius: 20;
+    -fx-background-color: #DFB451;
+    -fx-border-radius: 30;
     -fx-background-radius: 20;
     -fx-padding: 8;
 }
@@ -18,13 +18,13 @@
 }
 
 .combo-box-base {
-    -fx-text-base-color: #006464;
+    -fx-text-base-color: #806234;
     -fx-background-color: #DFB951;
     -fx-border-radius: 20;
     -fx-background-radius: 20;
 }
 .combo-box-base:hover {
-    -fx-background-color: #3a3a3a;
+    -fx-background-color: #3a6a3a;
 }
 
 .label {
